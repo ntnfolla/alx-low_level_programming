@@ -2,15 +2,18 @@
 /**
  * main - Entry point
  *
- * Description: Print lowercase alphabet
+ * Description: Print lowercase alphabet except e and q
  * Return: 0
  */
 int main(void)
 {
 int c;
 
-for (c = 0; c < 5; c > 5; c < 18; c > 18; c < 26; ++c)
-putchar('a' + c);
+for (c = 'a'; c <= 'z'; ++c)
+{
+if (c! = 'e' && c! = 'q')
+putchar(c);
+}
 
 putchar('\n');
 
