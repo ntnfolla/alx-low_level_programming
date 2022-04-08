@@ -6,7 +6,7 @@
  * Description: print all the digits of base 16 in lowercase
  * Return: 0
  */
-int main(void);
+int main(void)
 {
 char x;
 
