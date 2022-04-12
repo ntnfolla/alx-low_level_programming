@@ -3,7 +3,8 @@
 /**
  * main - main
  *
- * Description: print_alphabet, lowercase in a new line
+ * Description: lowercase alphabet in a new line
+ * print_alphabet - print lowercase alphabets
  *
  */
 void print_alphabet(void)
