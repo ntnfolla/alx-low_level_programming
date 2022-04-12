@@ -3,7 +3,7 @@
 /**
  * Description:print the alphabets in lowercase followed by new line
  */
-void print_alphabet(void);
+void print_alphabet(void)
 {
 char letter;
 
