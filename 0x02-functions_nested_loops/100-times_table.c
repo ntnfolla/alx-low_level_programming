@@ -20,7 +20,7 @@ if (j != 0)
 _putchar(',');
 _putchar(' ');
 }
-if (res < 10 && j !=0)
+if (res < 10 && j != 0)
 {
 _putchar(' ');
 _putchar(' ');
