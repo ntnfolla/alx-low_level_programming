@@ -2,9 +2,11 @@
 #include <stdio.h>
 
 /**
- * main - check the code
+ * reset_to_98 - takes and update the value it points to 98
  *
- * return: 0
+ * @n: int parameter
+ *
+ * return: Nothing
  */
 void reset_to_98(int *n)
 {
