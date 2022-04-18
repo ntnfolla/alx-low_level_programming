@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * _strlen - length of a string
+ *_strlen - length of a string
  * 
- * @s: A pointer to an int
+ *@s: A pointer to an int that will be changed/updated
  *
- * Return: Nothing
+ *Return: void that means our answer is correct
  */
 int _strlen(char *s)
 {
@@ -17,4 +17,5 @@ while (s[u] != '\0')
 {
 u++;
 }
+return (u);
 }
