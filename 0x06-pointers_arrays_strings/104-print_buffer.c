@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
  * print_buffer - Prints a buffer
  * @b: char
@@ -19,7 +18,7 @@ printf("%08x: ", x);
 for (i = 0; i < 10; i++)
 {
 if ((i + x) >= size)
-printf(" ");
+printf("  ");
 
 else
 printf("%02x", *(b + i + x));
