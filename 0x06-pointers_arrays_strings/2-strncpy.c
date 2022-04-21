@@ -22,7 +22,7 @@ x++;
 }
 while (x < n)
 {
-dest[x] = '\n';
+dest[x] = '\0';
 x++;
 }
 return (dest);
