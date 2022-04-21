@@ -1,4 +1,10 @@
+/*
+ * File: 101-print_number.c
+ * Auth: Brennan D Baraban
+ */
+
 #include "main.h"
+
 /**
  * print_number - print an integer
  * @n: The integer
@@ -12,6 +18,7 @@ if (n < 0)
 _putchar('-');
 num = -num;
 }
+
 if ((num / 10) > 0)
 	print_number(num / 10);
 
