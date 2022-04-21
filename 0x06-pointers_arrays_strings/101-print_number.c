@@ -1,26 +1,21 @@
-/*
- * File: 101-print_number.c
- * Auth: Brennan D Baraban
- */
-
 #include "main.h"
-
 /**
- * print_number - print an integer
- * @n: The integer
+ * print_number - print number putchar
+ * @n: integer
+ * Return: void
  */
 void print_number(int n)
 {
-unsigned int num = n;
+unsigned int y = n;
 
 if (n < 0)
 {
 _putchar('-');
-num = -num;
+y = -y;
 }
 
-if ((num / 10) > 0)
-	print_number(num / 10);
+if ((y / 10) > 0)
+	print_number(y / 10);
 
-_putchar((num % 10) + '0');
+_putchar((y % 10) + '0');
 }
