@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+
 /**
  * print_buffer - Prints a buffer
  * @b: char
@@ -38,6 +39,7 @@ printf("%c", *(b + i + x));
 else
 printf(".");
 }
+
 if (x >= size)
 continue;
 
