@@ -2,7 +2,7 @@
 /**
  * _memset - fills with constant byte
  * @s: one constant
- * @char b: second constant
+ * @b: second constant
  * @n: size
  *
  * Return: s
@@ -15,5 +15,5 @@ while (i < n)
 *(s + i) = b;
 i++;
 }
-Return (s);
+return (s);
 }
