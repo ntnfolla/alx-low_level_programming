@@ -13,9 +13,13 @@ while (*s != '\0')
 if (*s == c)
 {
 return (s);
+}
+else
+s++;
+}
+if (*s == c)
+return (s);
 
 else
 return (0);
-}
-}
 }
