@@ -8,16 +8,24 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-while (*haystack)
+unsigned int i = 0, j = 0;
+
+while (haystack[i])
 {
-if ((*haystack == *needle && coincidence(haystack, needle) == 1) || !*needle)
+while (needle[j] && (haystack[i] == needle[0]))
 {
-return (haystack);
+if (haystack[i + j] == needle[j])
+	j++;
+else
+	break;
+}
+if (needle[j])
+{
+i++;
+j = 0;
 }
 else
-{
-haystack++;
-}
+return (haystack + i);
 }
 return (0);
 }
