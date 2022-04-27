@@ -25,7 +25,7 @@ return (1 + s_len(s + 1));
  */
 int pal(char *s, int i, int len)
 {
-if (*(s + i) == *(s + len - 1 -i) && i == (len / 2))
+if (*(s + i) == *(s + len - 1 - i) && i == (len / 2))
 {
 return (1);
 }
