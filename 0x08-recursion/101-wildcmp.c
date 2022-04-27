@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * is_palindrome - compare two strings and write 1 if it is identical 0 otherwise
+ * wildcmp - compare two strings and write 1 if it is identical 0 otherwise
  * @s1: string one
  * @s2: string two
  * Return: always 0
