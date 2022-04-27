@@ -20,3 +20,22 @@ else
 return (sqrt_manual(n, 1));
 }
 }
+/**
+ * sqrt_manual - calculate manually the sqrt of a number
+ * @n: natural number
+ * @i: counter number
+ * Return: sqrt 0
+ */
+int sqrt_manual(int n, int i)
+{
+if (i * i == n)
+{
+return (i);
+}
+if (i * i > n)
+{
+return (-1);
+}
+else
+return (sqrt_manual(n, i + 1));
+}
