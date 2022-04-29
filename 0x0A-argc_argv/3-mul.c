@@ -1,6 +1,6 @@
-#include "main.h"
-#include <stdlid.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
 
 /**
  * main - Program that takes first two integers
