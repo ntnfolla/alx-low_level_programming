@@ -1,55 +1,19 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <stdbool.h>
 
 /**
- * coinConverter - Helper function
- * @i: Passed in variable
- * Return: number of coins needed
- */
-int coinConverter(int i)
-{
-int count = 0;
-
-while (i != 0)
-{
-if (i % 10 == 9 || i % 10 == 7)
-	i -= 2;
-else if (i % 25 == 0)
-	i -= 25;
-else if (i % 10 == 0)
-	i -= 10;
-else if (i % 5 == 0)
-	i -= 5;
-else if (i % 2 == 0)
-{
-if (i % 10 == 6)
-	i -= 1;
-else
-	i -= 2;
-}
-else
-i -= 1;
-
-count++;
-}
-
-return (count);
-}
-
-/**
- * main - Takes in exactly one argument
- * @argc: Number of command line
- * @argv: Array name
- * Return: 0 if one argument is passed 1 otherwise
+ * main -program that multiply
+ * @argc: count
+ * @argv: array name
+ * Return: void
  */
 int main(int argc, char *argv[])
 {
-int i, coin;
-
-coin = 0;
+int i;
+int num;
+int cent = 0;
+int coin[5] = {25, 10, 5, 2, 1};
 
 if (argc != 2)
 {
@@ -57,16 +21,16 @@ printf("Error\n");
 return (1);
 }
 
-i = atoi(argv[1]);
+num = atoi(argv[1]);
 
-if (i < 0)
-	printf("0\n");
-else
+for (i = 0; i < 5; i++)
 {
-coin = coinConverter(i);
-
-printf("%d\n", coin);
+if (num / coin[i] > 0)
+{
+cents += num / coin[i];
+num = num % coin[i];
 }
-
+}
+printf("%d\n", cents);
 return (0);
 }
