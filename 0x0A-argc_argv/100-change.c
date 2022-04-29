@@ -1,11 +1,14 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <stdbool.h>
+
 /**
 * main - prints the minimum number of coins to make change for a given amount
 * @argc: arguement count
 * @argv: array of pointers to arguement strings
-* Return: number of coins or 1
+* Return: 0
 **/
 int main(int argc, char *argv[])
 {
