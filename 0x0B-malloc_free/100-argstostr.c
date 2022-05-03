@@ -32,6 +32,6 @@ k++;
 *(newStr + k) = '\n';
 k++;
 }
-*(newStr + k) = '/0';
+*(newStr + k) = '\0';
 return (newStr);
 }
