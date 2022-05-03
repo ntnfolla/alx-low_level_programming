@@ -41,8 +41,8 @@ while (*str)
 if (*str != ' ')
 {
 if (*(str + 1) != ' ' || *(str + 1) != '\0')
-	chars++
-		str++;
+chars++;
+str++;
 }
 else
 break;
@@ -85,8 +85,7 @@ if (*(words + i) == NULL)
 for (j = 0; j < numChars; j++)
 {
 *(*(words + i) +j) = *str;
-str++;
-}
+str++; }
 *(*(words + i) +j) = '\0';
 i++;
 }
