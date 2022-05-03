@@ -82,6 +82,11 @@ numChars = countChars(str);
 *(words + i) = (char *) malloc((numChars + 1) * sizeof(char));
 if (*(words + i) == NULL)
 {
+for (j = 0; j < i; j++)
+free(*(words + j));
+free(words);
+return (NULL);
+}
 for (j = 0; j < numChars; j++)
 {
 *(*(words + i) +j) = *str;
