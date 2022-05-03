@@ -66,7 +66,7 @@ if (str == NULL || *str == '\0')
 numWords = countWords(str);
 if (numWords == 0)
 	return (NULL);
-words = (char **) malloc((numWords + 1) * sizeof (char *));
+words = (char **) malloc((numWords + 1) * sizeof(char *));
 if (words == NULL)
 {
 free(words);
