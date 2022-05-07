@@ -3,17 +3,19 @@
 #include <stdlib.h>
 
 /**
- * *_calloc - allocates memory for an array
- * @nmeb: string one
- * @size: string two, concatenates to 1
+ * _calloc- allocates memory for an array
+ * @nmeb: string 1
+ * @size: string 2, concatenates to 1
+ *
  * Return: pointer to the concatenated string
  */
+
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 unsigned int i;
 char *newArray;
 
-if (nmeb == 0 || size == 0)
+if (nmemb == 0 || size == 0)
 	return (NULL);
 newArray = malloc(nmemb * size);
 if (newArray == NULL)
