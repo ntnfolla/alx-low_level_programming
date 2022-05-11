@@ -1,4 +1,4 @@
-#include "sunction_pointers.h"
+#include "function_pointers.h"
 /**
  * array_iterator - executes a function
  * @array: array
