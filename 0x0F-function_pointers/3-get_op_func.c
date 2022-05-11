@@ -1,13 +1,13 @@
 #include "3-calc.h"
-
 #include <stdlib.h>
-
 #include <stdio.h>
+
 /**
  * get_op_func - select the correct operation function asked by user
  * @s: operator argument
  * Return: function pointer corresponding to operator given
  */
+
 int (*get_op_func(char *s))(int, int)
 {
 op_t ops[] = {
@@ -19,6 +19,7 @@ op_t ops[] = {
 {NULL, NULL}
 };
 int i;
+
 i = 0;
 while (i < 5)
 {

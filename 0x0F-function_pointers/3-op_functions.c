@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
  * op_add - addition operator
  * @a: first int
@@ -10,6 +11,7 @@ int op_add(int a, int b)
 {
 return (a + b);
 }
+
 /**
  * op_sub - subtraction operator
  * @a: first in
@@ -20,6 +22,7 @@ int op_sub(int a, int b)
 {
 return (a - b);
 }
+
 /**
  * op_mul - product of 2 numbers
  * @a: first int
