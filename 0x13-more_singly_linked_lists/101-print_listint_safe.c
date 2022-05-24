@@ -1,32 +1,67 @@
 #include "lists.h"
 #include <stdio.h>
 /**
- * print_listint_safe - Print a `listint_t` linked list including mem addresses
- * @head: head of linked list
- * Description: Go through the list only once.
- * Return: number of nodes in list. If fails, exit with status 98.
+ * looped_listint_len - is a function that counts unique nodes
+ * @head: is a pointer to the start of the list
+ * Return: the number of unique nodes in the list.
+ */
+size_t looped_listint_len(const listint_t *head)
+{
+const listint_t *temp1, *temp2;
+size_t s = 1;
+if (head == NULL || head->next == NULL)
+return (0);
+temp1 = head->next;
+temp2 = (head->next)->next;
+while (temp2)
+{
+if (temp1 == temp2)
+{
+temp1 = head;
+while (temp1 != temp2)
+{
+s++;
+temp1 = temp1->next;
+temp2 = temp2->next;
+}
+temp1 = temp1->next;
+while (temp1 != temp2)
+{
+s++;
+temp1 = temp1->next;
+}
+return (s);
+}
+temp1 = temp1->next;
+temp2 = (temp2->next)->next;
+}
+return (0);
+}
+/**
+ * print_listint_safe - is a function that prints a listint_t list
+ * @head: is a pointer to the start of the list
+ * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
-const listint_t *current;
-size_t count;
-const listint_t *hold;
-
-current = head;
-if (current == NULL)
-exit(98);
-count = 0;
-while (current != NULL)
+size_t s, i = 0;
+s = looped_listint_len(head);
+if (s == 0)
 {
-hold = current;
-current = current->next;
-count++;
-printf("[%p] %d\n", (void *)hold, hold->n);
-if (hold < current)
+for (; head != NULL; s++)
 {
-printf("-> [%p] %d\n", (void *)current, current->n);
-break;
+printf("[%p] %d\n", (void *)head, head->n);
+head = head->next;
 }
 }
-return (count);
+else
+{
+for (i = 0; i < s; i++)
+{
+printf("[%p] %d\n", (void *)head, head->n);
+head = head->next;
+}
+printf("-> [%p] %d\n", (void *)head, head->n);
+}
+return (s);
 }
