@@ -1,5 +1,9 @@
+#include <elf.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+
 /**
  * main - is a function that prints opcodes of this function
  * @argc: the number of arguments
