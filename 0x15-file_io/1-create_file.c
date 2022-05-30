@@ -1,21 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include "main.h"
+
 /**
- * create_file - is a function that creates a file
- * @filename: is the name of the file to be created
- * @text_content: is the text to be written in the file
- * Return: 1 for success -1 for failure
+ * create_file - check the code for Holberton School students.
+ * @filename: name of my file
+ * @text_content: number of the letters that i used
+ * Return: Always 0.
  */
+
 int create_file(const char *filename, char *text_content)
 {
-int fd, i = 0;
-if (!filename)
+int ID = 0, wr = 0, count = 0;
+if (filename == NULL)
+{
 return (-1);
-fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-if (fd == -1)
+}
+if (text_content != NULL)
+{
+for (count = 0; text_content[count] != '\0'; count++)
+{}
+}
+ID = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
+if (ID == -1)
+{
 return (-1);
-while (text_content && text_content[i])
-i++;
-write(fd, text_content, i);
-close(fd);
+}
+wr = write(ID, text_content, count);
+if (wr == -1)
+{
+return (-1);
+}
+close(ID);
 return (1);
 }
