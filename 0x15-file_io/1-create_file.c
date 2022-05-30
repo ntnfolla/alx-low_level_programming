@@ -1,35 +1,21 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
 /**
- * create_file - Entry Point
- * @filename: file name
- * @text_content: null terminated string to write
- * Return: 1
+ * create_file - is a function that creates a file
+ * @filename: is the name of the file to be created
+ * @text_content: is the text to be written in the file
+ * Return: 1 for success -1 for failure
  */
 int create_file(const char *filename, char *text_content)
 {
-int file, i = 0;
-if (filename == NULL)
+int fd, i = 0;
+if (!filename)
 return (-1);
-file = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
-if (file == -1)
+fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+if (fd == -1)
 return (-1);
-while (text_content[i])
+while (text_content && text_content[i])
 i++;
-if (text_content == NULL)
-{
-close(file);
-return (-1);
-}
-else
-{
-write(file, text_content, i);
-}
-close(file);
+write(fd, text_content, i);
+close(fd);
 return (1);
 }
