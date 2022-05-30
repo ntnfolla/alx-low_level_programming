@@ -1,36 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include "main.h"
+
 /**
- * read_textfile - Entry Point
- * @filename: file name
- * @letters: size
- * Return: 0
+ * read_textfile - check the code for Holberton School students.
+ * @filename: name of my file
+ * @letters: number of the letters that i used
+ * Return: Always 0.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-int file, rd, wr;
-char *buf;
-if (filename == NULL)
+int ID = 0;
+ssize_t WR = 0;
+ssize_t len = 0;
+char *buff = NULL;
+if (filename != NULL)
+{
+buff = malloc(letters);
+if (buff == NULL)
+{
 return (0);
-file = open(filename, O_RDONLY);
-if (file == -1)
+}
+ID = open(filename, O_RDONLY, 0600);
+if (ID == -1)
+{
+free(buff);
 return (0);
-buf = malloc(sizeof(char) * letters + 1);
-if (buf == NULL)
+}
+len = read(ID, buff, letters);
+if (len == -1)
+{
+free(buff);
 return (0);
-rd = read(file, buf, letters);
-if (rd == -1)
+}
+WR = write(STDOUT_FILENO, buff, len);
+if (WR == -1 || WR < len)
+{
+free(buff);
 return (0);
-buf[letters] = '\0';
-wr = write(1, buf, rd);
-if (wr == -1)
+}
+close(ID);
+free(buff);
+return (WR);
+}
 return (0);
-close(file);
-free(buf);
-return (wr);
 }
