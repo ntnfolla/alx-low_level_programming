@@ -1,10 +1,10 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include "main.h"
 /**
  * read_textfile - Entry Point
  * @filename: file name
